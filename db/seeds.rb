@@ -35,3 +35,28 @@ restaurants_attributes = [
   }
 ]
 restaurants_attributes.each { |params| Restaurant.create!(params) }
+
+Review.destroy_all
+reviews_attributes = [
+  {
+    restaurant_id: 1,
+    content:     "bad restaurant",
+    rating:      0
+  },
+  {
+    restaurant_id: 1,
+    content:     "not a good time",
+    rating:      0
+  },
+  {
+    restaurant_id: 1,
+    content:     "never coming back, one star experience",
+    rating:      1
+  },
+  {
+    restaurant_id: 2,
+    content:     "best restaurant in town",
+    rating:      5
+  }
+]
+reviews_attributes.each { |params| Review.create!(params) }
